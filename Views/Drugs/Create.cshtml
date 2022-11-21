@@ -1,0 +1,80 @@
+﻿@model MediCare2._0.Models.Drug
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Drug</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="drugName" class="control-label"></label>
+                <input asp-for="drugName" class="form-control" />
+                <span asp-validation-for="drugName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="description" class="control-label"></label>
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dosage" class="control-label"></label>
+                <input asp-for="dosage" class="form-control" />
+                <span asp-validation-for="dosage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dateFirstManufactured" class="control-label"></label>
+                <input asp-for="dateFirstManufactured" class="form-control" />
+                <span asp-validation-for="dateFirstManufactured" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="drugAdminID" class="control-label"></label>
+                <select asp-for="drugAdminID" class ="form-control" asp-items="ViewBag.drugAdminID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="sideEffectID" class="control-label"></label>
+                <select asp-for="sideEffectID" class ="form-control" asp-items="ViewBag.sideEffectID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="symptomID" class="control-label"></label>
+                <select asp-for="symptomID" class ="form-control" asp-items="ViewBag.symptomID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="companyID" class="control-label"></label>
+                <select asp-for="companyID" class ="form-control" asp-items="ViewBag.companyID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="phaseID" class="control-label"></label>
+                <select asp-for="phaseID" class ="form-control" asp-items="ViewBag.phaseID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="alternativeID" class="control-label"></label>
+                <select asp-for="alternativeID" class ="form-control" asp-items="ViewBag.alternativeID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="contraindicationID" class="control-label"></label>
+                <select asp-for="contraindicationID" class ="form-control" asp-items="ViewBag.contraindicationID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="scheduleID" class="control-label"></label>
+                <select asp-for="scheduleID" class ="form-control" asp-items="ViewBag.scheduleID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
